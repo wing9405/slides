@@ -71,6 +71,7 @@
                 </section>
                 <section>
                     <h2 style="text-transform: initial"> <i>Object.observe</i></h2>
+                    <h4 style="text-transform: initial"> Concept </h4>
                     <br>
                     <ul>
                         <li>
@@ -81,7 +82,7 @@
                                     (e.g. C.U.D. of the object's properties)
                                 </li>
                             </ul>
-                            <pre><code name="ex1" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                            <pre><code class="javascript" name="ex1" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 var model = {};
 Object.observe(model, function (changes) {
     changes.forEach(function (c) {
@@ -90,7 +91,7 @@ Object.observe(model, function (changes) {
               ' old value: ' + c.oldValue);
     });
 });
-                            </code><label for="ex1">Ex 1. Observing an object with <i>Object.observe</i></label></pre>
+                            </code><label style="font-weight: bold" for="ex1">Ex 1. Observing an object with <i>Object.observe</i></label></pre>
                         </li>
                         <li class="fragment">
                             Spec: ECMAScript 7
@@ -102,49 +103,118 @@ Object.observe(model, function (changes) {
                 </section>
                 <section>
                     <h2 style="text-transform: initial"> <i>Object.observe</i> </h2>
-                    <h3 style="text-transform: initial"> Custom Notification </h3>
-                    <pre><code name="ex2" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
-var model = {};
+                    <h4 style="text-transform: initial"> Custom Notification </h4>
+                    <br>
+                    <pre><code class="javascript" name="ex2" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+var rect = new Rectangle();
 
-(function () {
-    var _foo;   // hidden store of model.foo
-    Object.defineProperty(model, 'foo', {
-        get: function () {
-            return _foo;
-        },
-        set: function (arg) {
-            var notifier = Object.getNotifier(this);
-
-            notifier.notify({
-                type: 'updating-foo',
-                value: _foo
-            });
-
-            _foo = arg;
-
-            notifier.notify({
-                type: 'updated-foo',
-                value: arg
-            });
+Object.observe(rect, function (changes) {
+    changes.forEach(function (c) {
+        if (c.name === 'area') {
+            alert('Area changed to ' + c.object.area + ' by ' + c.by);
         }
     });
-})();
-
-Object.observe(model, function (changes) {
-    changes.forEach(function (c) {
-        alert(' type: ' + c.type +
-              ' value: ' + c.value);
-    });
 });
-                    </code><label for="ex2">Ex 2. Custom notification using <i>notifier.notify</i> </label></pre>
-                 </section>
-                <section>
-                    <h2 style="text-transform: initial"> World without <i>O.o</i>  </h2>
-                    <br>
+
+function Rectangle() {
+    var _width, _height; // hidden store for width and height
+
+    var notifier = Object.getNotifier(this);
+
+    Object.defineProperty(this, 'area', {
+        get: function () { return _width * _height; }
+    });
+    Object.defineProperty(this, 'width', {
+        get: function () { return _width; },
+        set: function (arg) {
+            notifier.notify({
+                type: 'update',
+                name: 'area',
+                by: 'width'
+            });
+
+            _width = arg;
+        },
+    });
+    Object.defineProperty(this, 'height', {
+        get: function () { return _height; },
+        set: function (arg) {
+            notifier.notify({
+                type: 'update',
+                name: 'area',
+                by: 'height'
+            });
+
+            _height = arg;
+        }
+    });
+
+    this.width = this.height = 1;
+}
+                    </code><label style="font-weight: bold" for="ex2">Ex 2. Custom notification using <i>notifier.notify</i> </label></pre>
                 </section>
                 <section>
-                    <h2 style="text-transform: initial"> </h2>
+                    <section>
+                        <h2 style="text-transform: initial"> <i>Object.observe</i>  </h2>
+                        <h4 style="text-transform: initial"> World without <i>O.o</i>  </h4>
+                        <br>
+                        <ul>
+                            <li> Floods of MVC frameworks.
+                                <ul style="font-size:80%">
+                                    <li> AnglularJS, Backbone.js, Ember.js, KnockoutJS, etc </li>
+                                    <li> See <a href="http://todomvc.com/" target="ref">Todo MVC</a> </li>
+                                </ul>
+                            </li>
+                            <li> Mostly, they are based on ...
+                                <ul style="font-size:80%">
+                                    <li> Dirty-checking (e.g. AngularJS): bad algorithmic behavior </li>
+                                    <li> Container object (e.g. Ember.js): incompatible objects
+                                        <pre><code class="javascript" name="ex3" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+App.person= Ember.Object.create({
+  firstName: "Gildong",
+  lastName: "Hong",
+  fullName: function () {
+    return this.get("firstName") + this.get("lastName");
+  }.property("firstName", "lastName")
+});
+
+App.perseon.get("fullName");       // App.person.fullName
+App.perseon.set("lastName", "Go"); // App.person.lastName = "Go"
+                                        </code><label style="font-weight: bold" for="ex3">Ex 3. Object in Ember</label></pre>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2 style="text-transform: initial"> <i>Object.observe</i>  </h2>
+                        <h4 style="text-transform: initial"> World without <i>O.o</i>  </h4>
+                        <br>
+                        <img id="img1" src="dirty-checking.png">
+                        <label style="font-size: 50%" for="img1">Algorithmic behavior of dirty-checking (<a href="http://www.html5rocks.com/en/tutorials/es7/observe" target="ref">HTML5 Rocks</a>)</label>
+                    </section>
+                    <section>
+                        <h2 style="text-transform: initial"> <i>Object.observe</i>  </h2>
+                        <h4 style="text-transform: initial"> World without <i>O.o</i>  </h4>
+                        <br>
+                        <img id="img2" src="observe.png"> <br>
+                        <label style="font-size: 50%" for="img2">Algorithmic behavior of <i>O.o</i> (<a href="http://www.html5rocks.com/en/tutorials/es7/observe" target="ref">HTML5 Rocks</a>)</label>
+                    </section>
+                </section>
+                <section>
+                    <h2 style="text-transform: initial"> Web Components </h2>
+                    <h4 style="text-transform: initial"> Concept </h4>
                     <br>
+                    <ul>
+                        <li> Building reusable DOM components (i.e. widgets)
+                            <ul>
+                                <li> Custom Elements: </li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </section>
                 <!--
                 <section>
@@ -473,6 +543,7 @@ function linkify( selector ) {
                 progress: true,
                 history: true,
                 center: true,
+                slideNumber: true,
 
                 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
                 transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
