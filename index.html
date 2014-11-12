@@ -82,7 +82,8 @@
                                     (e.g. C.U.D. of the object's properties)
                                 </li>
                             </ul>
-                            <pre><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                        </li>
+                        <pre><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 var model = {};
 Object.observe(model, function (changes) {
     changes.forEach(function (c) {
@@ -91,8 +92,8 @@ Object.observe(model, function (changes) {
               ' old value: ' + c.oldValue);
     });
 });
-                            </code><label style="font-weight: bold">Ex-1. Observing an object with <i>Object.observe</i></label></pre>
-                        </li>
+                        </code><label style="font-weight: bold">Ex-1. Observing an object with <i>Object.observe</i></label></pre>
+                        <br>
                         <li class="fragment">
                             Spec: ECMAScript 7
                         </li>
@@ -154,23 +155,24 @@ function Rectangle() {
                     </code><label style="font-weight: bold">Ex-2. Custom notification using <i>notifier.notify</i> </label></pre>
                 </section>
                 <section>
-                    <section>
-                        <h2 style="text-transform: initial"> <i>Object.observe</i>  </h2>
-                        <h3 style="text-transform: initial"> World without <i>O.o</i>  </h3>
-                        <br>
-                        <ul>
-                            <li> Floods of MVC frameworks.
-                                <ul style="font-size:80%">
-                                    <li> AnglularJS, Backbone.js, Ember.js, KnockoutJS, etc </li>
-                                    <li> See <a href="http://todomvc.com/" target="ref">Todo MVC</a> </li>
-                                </ul>
-                            </li>
-                            <li> Mostly, they are based on ...
-                                <ul style="font-size:80%">
-                                    <li> Dirty-checking (e.g. AngularJS): bad algorithmic behavior </li>
-                                    <li> Container object (e.g. Ember.js): incompatible objects
-                                        <pre><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
-App.person= Ember.Object.create({
+                    <h2 style="text-transform: initial"> <i>Object.observe</i>  </h2>
+                    <h3 style="text-transform: initial"> World without <i>O.o</i>  </h3>
+                    <br>
+                    <ul>
+                        <li> Floods of MVC frameworks.
+                            <ul style="font-size:80%">
+                                <li> AnglularJS, Backbone.js, Ember.js, KnockoutJS, etc </li>
+                                <li> See <a href="http://todomvc.com/" target="ref">Todo MVC</a> </li>
+                            </ul>
+                        </li>
+                        <li> Mostly, they are based on ...
+                            <ul style="font-size:80%">
+                                <li> Dirty-checking (e.g. AngularJS): bad algorithmic behavior </li>
+                                <li> Container object (e.g. Ember.js): incompatible objects </li>
+                            </ul>
+                        </li>
+                        <pre class="fragment"><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+var person= Ember.Object.create({
   firstName: "Gildong",
   lastName: "Hong",
   fullName: function () {
@@ -178,28 +180,24 @@ App.person= Ember.Object.create({
   }.property("firstName", "lastName")
 });
 
-App.perseon.get("fullName");       // App.person.fullName
-App.perseon.set("lastName", "Go"); // App.person.lastName = "Go"
-                                        </code><label style="font-weight: bold">Object in Ember</label></pre>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h2 style="text-transform: initial"> <i>Object.observe</i>  </h2>
-                        <h3 style="text-transform: initial"> World without <i>O.o</i>  </h3>
-                        <br>
-                        <img id="img1" src="images/dirty-checking.png" alt="dirty-checking">
-                        <label style="font-size: 50%">Algorithmic behavior of dirty-checking (<a href="http://www.html5rocks.com/en/tutorials/es7/observe" target="ref">HTML5 Rocks</a>)</label>
-                    </section>
-                    <section>
-                        <h2 style="text-transform: initial"> <i>Object.observe</i>  </h2>
-                        <h3 style="text-transform: initial"> World without <i>O.o</i>  </h3>
-                        <br>
-                        <img id="img2" src="images/observe.png" alt="dirty-checking"> <br>
-                        <label style="font-size: 50%">Algorithmic behavior of <i>O.o</i> (<a href="http://www.html5rocks.com/en/tutorials/es7/observe" target="ref">HTML5 Rocks</a>)</label>
-                    </section>
+perseon.get("fullName");       // person.fullName
+perseon.set("lastName", "Go"); // person.lastName = "Go"
+                        </code><label style="font-weight: bold">Ex-3. An object in Ember</label></pre>
+                    </ul>
+                </section>
+                <section>
+                    <h2 style="text-transform: initial"> <i>Object.observe</i>  </h2>
+                    <h3 style="text-transform: initial"> World without <i>O.o</i>  </h3>
+                    <br>
+                    <img id="img1" src="images/dirty-checking.png" alt="dirty-checking">
+                    <label style="font-size: 70%">Algorithmic behavior of dirty-checking (<a href="http://www.html5rocks.com/en/tutorials/es7/observe" target="ref">HTML5 Rocks</a>)</label>
+                </section>
+                <section>
+                    <h2 style="text-transform: initial"> <i>Object.observe</i>  </h2>
+                    <h3 style="text-transform: initial"> World without <i>O.o</i>  </h3>
+                    <br>
+                    <img id="img2" src="images/observe.png" alt="dirty-checking"> <br>
+                    <label style="font-size: 70%">Algorithmic behavior of <i>O.o</i> (<a href="http://www.html5rocks.com/en/tutorials/es7/observe" target="ref">HTML5 Rocks</a>)</label>
                 </section>
                 <section>
                     <h2 style="text-transform: initial"> Web Components </h2>
@@ -212,12 +210,12 @@ App.perseon.set("lastName", "Go"); // App.person.lastName = "Go"
                             </ul>
                         </li>
                         <li> Chaotic mixture of semantics and presentation in DOM trees </li>
-                    </ul> <br> <br>
+                    </ul>
                     <img class="fragment" src="images/dom-tree.png" alt="dom-tree">
                 </section>
                 <section>
                     <h2 style="text-transform: initial"> Web Components </h2>
-                    <h3 style="text-transform: initial"> What if?</h3>
+                    <h3 style="text-transform: initial"> What if ...?</h3>
                     <br>
                     <!--<img src="images/fs-tree.png" alt="fs-tree">-->
                     <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
@@ -245,22 +243,26 @@ App.perseon.set("lastName", "Go"); // App.person.lastName = "Go"
         ...
     </fs-node-dir>
 </fs-node-dir>
-                    </code></pre>
+                    </code><label style="font-weight: bold">Ex-4. Only the semantic contents, without presentation details</label></pre>
                 </section>
                 <section>
                     <h2 style="text-transform: initial"> Web Components </h2>
                     <h3 style="text-transform: initial"> Basic Concept </h3>
                     <br>
                     <ul>
-                        <li> Define new HTML elements as reusable DOM components </li>
-                        <li> Consists of ...
+                        <li> Define custom HTML elements having rich functionality</li>
                             <ul style="font-size:80%">
-                                <li> Custom Elements<span class="fragment">: Register new HTML element names</span></li>
-                                <li> HTML Templates<span class="fragment">: Define presentation layers of reusable components</span> </li>
-                                <li> Shadow DOM<span class="fragment">: Glue templates to custom elements with <em>encapsulation</em></span> </li>
+                                <li> Presentation details are hidden at their use sites </li>
+                            </ul>
+                        <li> Four technical pillars
+                            <ul style="font-size:80%">
+                                <li> Custom Elements<span class="fragment">: Register new HTML element names to the browser</span></li>
+                                <li> HTML Templates<span class="fragment">: Define presentation layers of the elements </span> </li>
+                                <li> Shadow DOM<span class="fragment">: Glue templates to the elements with <em>encapsulation</em></span> </li>
                                 <li> HTML Imports<span class="fragment">: Single definition and multiple use</span></li>
                             </ul>
                         </li>
+                        <br>
                         <li class="fragment"> Spec: WhatWG, W3C </li>
                         <li class="fragment"> Support: Chrome 36+, Opera 25+, Android 37+, Chrome for Android 38+
                             (ref. <a href="http://caniuse.com/#search=web component" target="ref">Can-I-Use</a>)
@@ -268,53 +270,50 @@ App.perseon.set("lastName", "Go"); // App.person.lastName = "Go"
                     </ul>
                 </section>
                 <section>
-                    <section>
-                        <h2 style="text-transform: initial"> Custom Elements @ Web Components </h2>
-                        <h3 style="text-transform: initial"> Basic Concept </h3>
-                        <br>
-                        <ul>
-                            <li> Register a new HTML element name (tag name) to a browser using <i>document.registerElement()</i>
-                                <pre><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                    <h2 style="text-transform: initial"> Custom Elements @ Web Components </h2>
+                    <h3 style="text-transform: initial"> Basic Concept </h3>
+                    <br>
+                    <ul>
+                        <li> Register a new HTML element name (tag name) to a browser using <i>document.registerElement()</i> </li>
+                        <pre><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 var NameTag = document.registerElement('name-tag');
 document.body.appendChild(new NameTag());
-                                </code><label style="font-weight: bold">Ex-3. Registering a new element name</label></pre>
-                                <ul style="font-size:80%">
-                                    <li> Element names must have a dash for forward compatibility </li>
-                                    <li> <i>document.registerElement(...)</i> returns the constructor of the new element</li>
-                                </ul>
-                            </li>
+                        </code><label style="font-weight: bold">Ex-3. Registering a new element name</label></pre>
+                        <ul style="font-size:80%">
+                            <li> Element names must have a dash for forward compatibility </li>
+                            <li> <i>document.registerElement(...)</i> returns the constructor of the new element</li>
                         </ul>
-                    </section>
-                    <section>
-                        <h2 style="text-transform: initial"> Custom Elements @ Web Components </h2>
-                        <h3 style="text-transform: initial"> Extending Another Element</h3>
-                        <br>
-                        <ul>
-                            <li> Can extend other element
-                                <pre><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
-var ExtendedButton = document.registerElement('extended-button', {
+                    </ul>
+                </section>
+                <section>
+                    <h2 style="text-transform: initial"> Custom Elements @ Web Components </h2>
+                    <h3 style="text-transform: initial"> Extending Another Element</h3>
+                    <br>
+                    <ul>
+                        <li> Can extend other element </li>
+                        <pre><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+document.registerElement('extended-button', {
     prototype: Object.create(HTMLButtonElement.prototype)
 });
-                                </code><label style="font-weight: bold">Ex-4. Extending another element</label></pre>
-                            </li>
-                            <li> Extends HTMLElement by default, i.e. Ex-3. is equivalent to
-                                <pre><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
-var NameTag = document.registerElement('name-tag', {
-    prototype: Object.create(HTMLElement.prototype)
-});
-...
-                                </code><label style="font-weight: bold">Ex-5. Extending HTMLElement by default</label></pre>
-                            </li>
-                         </ul>
-                    </section>
-                    <section>
-                        <h2 style="text-transform: initial"> Custom Elements @ Web Components </h2>
-                        <h3 style="text-transform: initial"> Lifecycle Callbacks </h3>
-                        <br>
-                        <ul>
-                            <li> <i>createdCallback, attachedCallback, detachedCallback, attributeChangedCallback(attrName, oldVal, newVal) </i></li>
-                            <li> <i>createdCallback</i> is a good place to fill the contents of custom elements
-                                <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                        </code><label style="font-weight: bold">Ex-4. Extending another element</label></pre>
+                        <li> Extends HTMLElement by default </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 style="text-transform: initial"> Custom Elements @ Web Components </h2>
+                    <h3 style="text-transform: initial"> Lifecycle Callbacks </h3>
+                    <br>
+                    <ul>
+                        <li> Callbacks
+                            <ul>
+                                <li><i> createdCallback </i></li>
+                                <li><i> attachedCallback </i></li>
+                                <li><i> detachedCallback </i></li>
+                                <li><i> attributeChangedCallback(attrName, oldVal, newVal) </i></li>
+                            </ul>
+                        </li>
+                        <li> <i>createdCallback</i> is good to fill the contents of custom elements
+                            <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 <div>
   <label>Name: </label> <name-tag> </name-tag>
   <script>
@@ -325,14 +324,13 @@ var NameTag = document.registerElement('name-tag', {
     document.registerElement('name-tag', { prototype: proto });
   </script>
 </div>
-                                </code><label style="font-weight: bold">Ex-6. Filling the content of a custom element</label></pre>
-                                <ul style="font-size:80%">
-                                    <li> But, what if the content string is very long? String concat?</li>
-                                </ul>
-                            </li>
-                         </ul>
-                     </section>
-                </section>
+                            </code><label style="font-weight: bold">Ex-6. Filling the content of a custom element</label></pre>
+                            <ul style="font-size:80%">
+                                <li> But, what if the content string is very long? String concat?</li>
+                            </ul>
+                        </li>
+                     </ul>
+                 </section>
                 <section>
                     <h2 style="text-transform: initial"> HTML Templates @ Web Components </h2>
                     <h3 style="text-transform: initial"> Basic Concept </h3>
@@ -353,60 +351,59 @@ var NameTag = document.registerElement('name-tag', {
                         <li> How to use a template
                             <ul style="font-size:80%">
                                 <li> Clone its content (tmpl.content, a <i>DocumentFragment</i> object) <br>
-                                    and add to the DOM </li>
+                                    and add the clone to the DOM </li>
                             </ul>
                             <pre><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 var tmpl = document.querySelector('#mytemplate');
-var clone = document.importNode(tmpl.content, true); // deep clone
+var clone = document.importNode(tmpl.content, true); // true: deep clone
 document.body.appendChild(clone);
                             </code><label style="font-weight: bold">Ex-7. Using template</label></pre>
                         </li>
                     </ul>
                 </section>
                 <section>
-                    <section>
-                        <h2 style="text-transform: initial"> Shadow DOM @ Web Components </h2>
-                        <h3 style="text-transform: initial"> Basic Concept </h3>
-                        <br>
-                        <ul>
-                            <li> Provides encapsulation for reusable components
-                                <ul style="font-size:80%">
-                                    <li> Separates the presentation detail from semantics and hides it </li>
-                                    <li> Avoids name collision: IDs, class names, styling rules, etc</li>
-                                </ul>
-                            </li>
-                            <li> A simple example
-                                <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                    <h2 style="text-transform: initial"> Shadow DOM @ Web Components </h2>
+                    <h3 style="text-transform: initial"> Basic Concept </h3>
+                    <br>
+                    <ul>
+                        <li> Provides encapsulation for web components
+                            <ul style="font-size:80%">
+                                <li> Presentation details are kept in Shadow DOM and hidden at use sites </li>
+                                <li> Avoids name collision: IDs, class names, styling rules, etc</li>
+                            </ul>
+                        </li>
+                        <li> A simple example
+                            <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 <button>Hello, world!</button>
 <script>
 var host = document.querySelector('button');
 var root = host.createShadowRoot();
 root.textContent = '안녕, 세상아!';
 </script>
-                                </code><label style="font-weight: bold">Ex-8. Hello world of Shadow DOM</label></pre>
-                                <ul style="font-size:80%">
-                                    <li> Add a shadow root to an element (shadow host) using <i>createShadowRoot </i>method </li>
-                                    <li> If an element has a shadow root, the shadow root's content is rendered instead</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h2 style="text-transform: initial"> Shadow DOM @ Web Components </h2>
-                        <h3 style="text-transform: initial"> Separating Presentation and Semantics</h3>
-                        <br>
-                        <ul>
-                            <li> What we are to do: Creating a name tag </li>
-                        </ul>
-                        <img src="images/name-tag.png">
-                    </section>
-                    <section>
-                        <h2 style="text-transform: initial"> Shadow DOM @ Web Components </h2>
-                        <h3 style="text-transform: initial"> Separating Presentation and Semantics</h3>
-                        <br>
-                        <ul>
-                            <li> Original code: Mixture of presentation and semantics
-                                <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                            </code><label style="font-weight: bold">Ex-8. Hello world of Shadow DOM</label></pre>
+                            <ul style="font-size:80%">
+                                <li> Add a shadow root to an element using the element's <i>createShadowRoot</i> method </li>
+                                <li> Shadow host's content is ignored while rendering, and the shadow root's content is rendered instead</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 style="text-transform: initial"> Shadow DOM @ Web Components </h2>
+                    <h3 style="text-transform: initial"> Separating Presentation and Semantics</h3>
+                    <br>
+                    <ul>
+                        <li> To-do: Creating a name tag </li>
+                    </ul> <br>
+                    <img src="images/name-tag.png">
+                </section>
+                <section>
+                    <h2 style="text-transform: initial"> Shadow DOM @ Web Components </h2>
+                    <h3 style="text-transform: initial"> Separating Presentation and Semantics</h3>
+                    <br>
+                    <ul>
+                        <li> Original code: Mixture of presentation and semantics
+                            <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 <style>
 .outer {
     border: 2px solid brown;
@@ -438,22 +435,22 @@ root.textContent = '안녕, 세상아!';
     Bob
   </div>
 </div>
-                                </code><label style="font-weight: bold">Ex-9. Original code</label></pre>
-                             </li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h2 style="text-transform: initial"> Shadow DOM @ Web Components </h2>
-                        <h3 style="text-transform: initial"> Separating Presentation and Semantics</h3>
-                        <br>
-                        <ul>
-                            <li> Step 1: Concentrate on true semantics of name tags
-                                <ul style="font-size:80%">
-                                    <li> It is a name tag </li>
-                                    <li> The name is 'Bob'</li>
-                                </ul>
-                             </li>
-                             <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                            </code><label style="font-weight: bold">Ex-9. Original code</label></pre>
+                         </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 style="text-transform: initial"> Shadow DOM @ Web Components </h2>
+                    <h3 style="text-transform: initial"> Separating Presentation and Semantics</h3>
+                    <br>
+                    <ul>
+                        <li> Step 1: Concentrate on true semantics of name tags
+                            <ol style="font-size:80%">
+                                <li> It is a name tag </li>
+                                <li> The name is 'Bob'</li>
+                            </ol>
+                         </li>
+                         <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 <!-- true semantics -->
 <div id="nameTag">Bob</div>
 
@@ -475,33 +472,32 @@ root.textContent = '안녕, 세상아!';
   </div>
 </div>
 </template>
-                            </code><label style="font-weight: bold">Ex-10. Step 1: Extract true semantics</label></pre>
-                        </ul>
-                    </section>
-                    <section>
-                        <h2 style="text-transform: initial"> Shadow DOM @ Web Components </h2>
-                        <h3 style="text-transform: initial"> Separating Presentation and Semantics</h3>
-                        <br>
-                        <ul>
-                            <li> Step 2: Populate the presentation layer again using Shadow DOM </li>
-                             <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                        </code><label style="font-weight: bold">Ex-10. Step 1: Extract true semantics</label></pre>
+                    </ul>
+                </section>
+                <section>
+                    <h2 style="text-transform: initial"> Shadow DOM @ Web Components </h2>
+                    <h3 style="text-transform: initial"> Separating Presentation and Semantics</h3>
+                    <br>
+                    <ul>
+                        <li> Step 2: Populate the presentation layer again using Shadow DOM </li>
+                         <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 <script>
 var shadow = document.querySelector('#nameTag').createShadowRoot();
 var template = document.querySelector('#nameTagTemplate');
 var clone = document.importNode(template.content, true);
 shadow.appendChild(clone);
 </script>
-                            </code><label style="font-weight: bold">Ex-11. Step 2: Populate the presentation again</label></pre>
-                        </ul>
-                    </section>
-                    <section>
-                        <h2 style="text-transform: initial"> Shadow DOM @ Web Components </h2>
-                        <h3 style="text-transform: initial"> Separating Presentation and Semantics</h3>
-                        <br>
-                        <ul>
-                            <li> Step 3: Completely remove contents from presentation <br>
-                                using &lt;content&gt;</li>
-                             <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                        </code><label style="font-weight: bold">Ex-11. Step 2: Populate the presentation again</label></pre>
+                    </ul>
+                </section>
+                <section>
+                    <h2 style="text-transform: initial"> Shadow DOM @ Web Components </h2>
+                    <h3 style="text-transform: initial"> Separating Presentation and Semantics</h3>
+                    <br>
+                    <ul>
+                        <li> Step 3: Completely remove semantic contents from presentation using &lt;content&gt;</li>
+                        <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 <template id="nameTagTemplate">
 <style>
 .outer {
@@ -515,14 +511,13 @@ shadow.appendChild(clone);
     Hi! My name is
   </div>
   <div class="name">
-    <content></content>   <!-- replaces Bob -->
+    <content></content>   <!-- !!! -->
   </div>
 </div>
 </template>
-                            </code><label style="font-weight: bold">Ex-12. Step 3: Using &lt;content&gt; to complete the separation</label></pre>
-                            <li> &lt;content&gt; is a 'hole' in the presentation layer into which the shadow host's content is prejected</li>
-                        </ul>
-                    </section>
+                        </code><label style="font-weight: bold">Ex-12. Step 3: Using &lt;content&gt; to complete the separation</label></pre>
+                        <li> &lt;content&gt; is a 'hole' in the presentation layer into which the host's content is prejected</li>
+                    </ul>
                 </section>
                 <!--
                 <section>
