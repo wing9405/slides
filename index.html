@@ -53,7 +53,7 @@
                     <br>
                     <ol style="text-transform: initial">
                         <li> Web-App Now and Future</li>
-                        <li> Technical Topics
+                        <li> Technical Issues
                             <ol style="font-size: 90%">
                                 <li><i> Object.observe </i></li>
                                 <li> Web Components
@@ -115,33 +115,41 @@
                             </ul>
                         </li>
                      </ul>
-                </section>
-                <section>
+                 </section>
+                 <section>
+                    <h2 style="text-transform: initial"> Web-App Now and Future </h2>
+                    <h3 style="text-transform: initial"> Future - Bright Side</h3>
+                    <br>
+                    <ul>
+                        <li> Pros of Web-apps
+                            <ul style="font-size:80%">
+                                <li> No install </li>
+                                <li> Always up-to-date </li>
+                                <li> Compatible with every CPU and OS </li>
+                                <li> Accessible from anywhere if online </li>
+                                <li> Easy sharing: single copy on the server</li>
+                                <li> Free from some technical problems (e.g. desktop crash, data backups)</li>
+                                <li> Centralized security management (e.g. no Nasca, no Escort)</li>
+                            </ul>
+                        </li>
+                     </ul>
+                 </section>
+                 <section>
                     <section>
                         <h2 style="text-transform: initial"> Web-App Now and Future </h2>
-                        <h3 style="text-transform: initial"> Future </h3>
+                        <h3 style="text-transform: initial"> Future - Hurdles</h3>
                         <br>
                         <ul>
-                            <li> Benefits of Web-apps
-                                <ul style="font-size:80%">
-                                    <li> No install </li>
-                                    <li> Always up-to-date </li>
-                                    <li> Compatible with every CPU and OS </li>
-                                    <li> Accessible from anywhere if online </li>
-                                    <li> Easy sharing: single copy on the server</li>
-                                    <li> Free from some technical problems e.g. desktop crash, data backups</li>
-                                </ul>
-                            </li>
-                            <li class="fragment"> Also, (people say) there are hurdles
+                            <li> Cons (people say) of Web-apps
                                 <ul style="font-size:80%">
                                     <li> Unavailable when offline </li>
                                     <li> Poor access to local resources (files, printers, scanners, etc)</li>
                                     <li> Poor performance </li>
                                 </ul>
                             </li>
-                            <li class="fragment"> But, (we think) the real problems are
+                            <li class="fragment"> But, (I think) the real problems are
                                 <ul style="font-size:80%">
-                                    <li> Inertia - <a href="http://techcrunch.com/2014/04/01/mobile-app-usage-increases-in-2014-as-mobile-web-surfing-declines/" target="ref">A survey by Flurry</a></li>
+                                    <li> Inertia and premature apps - <a href="http://techcrunch.com/2014/04/01/mobile-app-usage-increases-in-2014-as-mobile-web-surfing-declines/" target="ref">A survey by Flurry</a></li>
                                     <li> Poor development environment </li>
                                 </ul>
                             </li>
@@ -150,6 +158,27 @@
                      <section>
                          <img src="images/develEco.png" alt="dev-eco">
                      </section>
+                 </section>
+                 <section>
+                    <h2 style="text-transform: initial"> Technical Issues </h2>
+                    <br>
+                     <ol style="font-size: 90%">
+                        <li><i> Object.observe </i></li>
+                        <li style="opacity: 0.5"> Web Components
+                            <ul style="font-size: 85%">
+                                <li> Custom Elements </li>
+                                <li> HTML Templates </li>
+                                <li> Shadow DOM </li>
+                                <li> HTML Imports </li>
+                            </ul>
+                        </li>
+                        <!--
+                        <li style="opacity: 0.5"> Service Workers </li>
+                        <li style="opacity: 0.5"> WebRTC </li>
+                        <li style="opacity: 0.5"> App Manifests </li>
+                        <li style="opacity: 0.5"> Picture Elements & <i>srcset</i> Attribute </li>
+                         -->
+                    </ol>
                  </section>
                  <section>
                     <h2 style="text-transform: initial"> <i>Object.observe</i></h2>
@@ -165,13 +194,14 @@
                                 </li>
                             </ul>
                         </li>
-                        <pre><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                        <pre class="fragment"><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 var model = {};
 Object.observe(model, function (changes) {
     changes.forEach(function (c) {
-        alert(' type: ' + c.type +
-              ' name: ' + c.name +
-              ' old value: ' + c.oldValue);
+        alert('\n name: ' + c.name +
+              '\n type: ' + c.type +
+              '\n old value: ' + c.oldValue +
+              '\n cur value: ' + c.object[c.name]);
     });
 });
                         </code><label style="font-weight: bold">Ex-1. Observing an object with <i>Object.observe</i></label></pre>
@@ -281,7 +311,28 @@ perseon.set("lastName", "Go"); // person.lastName = "Go"
                     <img id="img2" src="images/observe.png" alt="dirty-checking"> <br>
                     <label style="font-size: 70%">Algorithmic behavior of <i>O.o</i> (<a href="http://www.html5rocks.com/en/tutorials/es7/observe" target="ref">HTML5 Rocks</a>)</label>
                 </section>
-                <section>
+                 <section>
+                    <h2 style="text-transform: initial"> Technical Issues </h2>
+                    <br>
+                     <ol style="font-size: 90%">
+                        <li style="opacity: 0.5"><i> Object.observe </i></li>
+                        <li> Web Components
+                            <ul style="font-size: 85%">
+                                <li> Custom Elements </li>
+                                <li> HTML Templates </li>
+                                <li> Shadow DOM </li>
+                                <li> HTML Imports </li>
+                            </ul>
+                        </li>
+                        <!--
+                        <li style="opacity: 0.5"> Service Workers </li>
+                        <li style="opacity: 0.5"> WebRTC </li>
+                        <li style="opacity: 0.5"> App Manifests </li>
+                        <li style="opacity: 0.5"> Picture Elements & <i>srcset</i> Attribute </li>
+                         -->
+                    </ol>
+                 </section>
+                 <section>
                     <h2 style="text-transform: initial"> Web Components </h2>
                     <h3 style="text-transform: initial"> Why </h3>
                     <br>
@@ -336,12 +387,12 @@ perseon.set("lastName", "Go"); // person.lastName = "Go"
                             <ul style="font-size:80%">
                                 <li> Presentation details are hidden at their use sites </li>
                             </ul>
-                        <li> Four technical pillars
+                        <li> Four pillars
                             <ul style="font-size:80%">
                                 <li> Custom Elements<span class="fragment">: Register new HTML element names to the browser</span></li>
                                 <li> HTML Templates<span class="fragment">: Define presentation layers of the elements </span> </li>
                                 <li> Shadow DOM<span class="fragment">: Glue templates to the elements with <em>encapsulation</em></span> </li>
-                                <li> HTML Imports<span class="fragment">: Single definition and multiple use</span></li>
+                                <li> HTML Imports<span class="fragment">: Single definition and multiple uses</span></li>
                             </ul>
                         </li>
                         <br>
@@ -360,7 +411,7 @@ perseon.set("lastName", "Go"); // person.lastName = "Go"
                         <pre><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 var NameTag = document.registerElement('name-tag');
 document.body.appendChild(new NameTag());
-                        </code><label style="font-weight: bold">Ex-3. Registering a new element name</label></pre>
+                        </code><label style="font-weight: bold">Ex-5. Registering a new element name</label></pre>
                         <ul style="font-size:80%">
                             <li> Element names must have a dash for forward compatibility </li>
                             <li> <i>document.registerElement(...)</i> returns the constructor of the new element</li>
@@ -372,14 +423,13 @@ document.body.appendChild(new NameTag());
                     <h3 style="text-transform: initial"> Extending Another Element</h3>
                     <br>
                     <ul>
-                        <li> Can extend other element </li>
-                        <pre><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                        <li> Can extend other element (default: HTMLElement)</li>
+                    </ul>
+                    <pre><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 document.registerElement('extended-button', {
     prototype: Object.create(HTMLButtonElement.prototype)
 });
-                        </code><label style="font-weight: bold">Ex-4. Extending another element</label></pre>
-                        <li> Extends HTMLElement by default </li>
-                    </ul>
+                    </code><label style="font-weight: bold">Ex-6. Extending another element</label></pre>
                 </section>
                 <section>
                     <h2 style="text-transform: initial"> Custom Elements @ Web Components </h2>
@@ -395,10 +445,10 @@ document.registerElement('extended-button', {
                             </ul>
                         </li>
                         <li> <i>createdCallback</i> is good to fill the contents of custom elements
-                            <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                            <pre class="fragment"><code data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 <div>
   <label>Name: </label> <name-tag> </name-tag>
-  <script>
+  <script type="text/javascript">
     var proto = Object.create(HTMLElement.prototype);
     proto.createdCallback = function () {
       this.innerHTML = '<span> Gildong Hong </span>';
@@ -406,9 +456,9 @@ document.registerElement('extended-button', {
     document.registerElement('name-tag', { prototype: proto });
   </script>
 </div>
-                            </code><label style="font-weight: bold">Ex-6. Filling the content of a custom element</label></pre>
+                            </code><label style="font-weight: bold">Ex-7. Filling the content of a custom element</label></pre>
                             <ul style="font-size:80%">
-                                <li> But, what if the content string is very long? String concat?</li>
+                                <li class="fragment"> But, what if the content string is very long? String concat?</li>
                             </ul>
                         </li>
                      </ul>
@@ -423,14 +473,14 @@ document.registerElement('extended-button', {
                                 <li> Hidden: Parsed but not rendered</li>
                                 <li> Inactivated: Scripts don't run, images don't load, audio doesn't play, etc</li>
                             </ul>
-                            <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                            <pre class="fragment"><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 <template id="mytemplate">
     <img src="my-image.png" alt="my excelent image">
     <div class="comment"></div>
 </template>
-                            </code><label style="font-weight: bold">Ex-6. HTML template</label></pre>
+                            </code><label style="font-weight: bold">Ex-8. HTML template</label></pre>
                         </li>
-                        <li> How to use a template
+                        <li class="fragment"> How to use a template
                             <ul style="font-size:80%">
                                 <li> Clone its content (tmpl.content, a <i>DocumentFragment</i> object) <br>
                                     and add the clone to the DOM </li>
@@ -439,7 +489,7 @@ document.registerElement('extended-button', {
 var tmpl = document.querySelector('#mytemplate');
 var clone = document.importNode(tmpl.content, true); // true: deep clone
 document.body.appendChild(clone);
-                            </code><label style="font-weight: bold">Ex-7. Using template</label></pre>
+                            </code><label style="font-weight: bold">Ex-9. Using template</label></pre>
                         </li>
                     </ul>
                 </section>
@@ -454,7 +504,7 @@ document.body.appendChild(clone);
                                 <li> Avoids name collision: IDs, class names, styling rules, etc</li>
                             </ul>
                         </li>
-                        <li> A simple example
+                        <li class="fragment"> A simple example
                             <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 <button>Hello, world!</button>
 <script>
@@ -462,7 +512,7 @@ var host = document.querySelector('button');
 var root = host.createShadowRoot();
 root.textContent = '안녕, 세상아!';
 </script>
-                            </code><label style="font-weight: bold">Ex-8. Hello world of Shadow DOM</label></pre>
+                            </code><label style="font-weight: bold">Ex-10. Hello world of Shadow DOM</label></pre>
                             <ul style="font-size:80%">
                                 <li> Add a shadow root to an element using the element's <i>createShadowRoot</i> method </li>
                                 <li> Shadow host's content is ignored while rendering, and the shadow root's content is rendered instead</li>
@@ -517,7 +567,7 @@ root.textContent = '안녕, 세상아!';
     Bob
   </div>
 </div>
-                            </code><label style="font-weight: bold">Ex-9. Original code</label></pre>
+                            </code><label style="font-weight: bold">Ex-11. Original code</label></pre>
                          </li>
                     </ul>
                 </section>
@@ -532,29 +582,23 @@ root.textContent = '안녕, 세상아!';
                                 <li> The name is 'Bob'</li>
                             </ol>
                          </li>
-                         <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                         <pre class="fragment"><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 <!-- true semantics -->
 <div id="nameTag">Bob</div>
 
 <!-- presentation details -->
 <template id="nameTagTemplate">
 <style>
-.outer {
-    border: 2px solid brown;
-
-    … same as above …
-
+    ...
 </style>
 <div class="outer">
-  <div class="boilerplate">
-    Hi! My name is
-  </div>
+  ...
   <div class="name">
-    Bob
+    Bob     <!-- !!! -->
   </div>
 </div>
 </template>
-                        </code><label style="font-weight: bold">Ex-10. Step 1: Extract true semantics</label></pre>
+                        </code><label style="font-weight: bold">Ex-10. Step 12: Extract true semantics</label></pre>
                     </ul>
                 </section>
                 <section>
@@ -562,15 +606,23 @@ root.textContent = '안녕, 세상아!';
                     <h3 style="text-transform: initial"> Separating Presentation and Semantics</h3>
                     <br>
                     <ul>
-                        <li> Step 2: Populate the presentation layer again using Shadow DOM </li>
-                         <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                        <li> Step 2: Populate the presentation layer using Shadow DOM </li>
+                         <pre><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+<!-- true semantics -->
+<div id="nameTag">Bob</div>
+
+<!-- presentation details -->
+<template id="nameTagTemplate">
+  ...
+</template>
+
 <script>
 var shadow = document.querySelector('#nameTag').createShadowRoot();
 var template = document.querySelector('#nameTagTemplate');
 var clone = document.importNode(template.content, true);
 shadow.appendChild(clone);
 </script>
-                        </code><label style="font-weight: bold">Ex-11. Step 2: Populate the presentation again</label></pre>
+                        </code><label style="font-weight: bold">Ex-13. Step 2: Populate the presentation again</label></pre>
                     </ul>
                 </section>
                 <section>
@@ -578,27 +630,25 @@ shadow.appendChild(clone);
                     <h3 style="text-transform: initial"> Separating Presentation and Semantics</h3>
                     <br>
                     <ul>
-                        <li> Step 3: Completely remove semantic contents from presentation using &lt;content&gt;</li>
+                        <li> Step 3: Remove remaining semantic contents from presentation</li>
                         <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 <template id="nameTagTemplate">
 <style>
-.outer {
-    border: 2px solid brown;
-
-    … same as above …
-
+  ...
 </style>
 <div class="outer">
-  <div class="boilerplate">
-    Hi! My name is
-  </div>
+  ...
   <div class="name">
     <content></content>   <!-- !!! -->
   </div>
 </div>
 </template>
-                        </code><label style="font-weight: bold">Ex-12. Step 3: Using &lt;content&gt; to complete the separation</label></pre>
-                        <li> &lt;content&gt; is a 'hole' in the presentation layer into which the host's content is prejected</li>
+                        </code><label style="font-weight: bold">Ex-14. Step 3: Using &lt;content&gt; to complete the separation</label></pre>
+                        <li> &lt;content&gt; is a 'hole' in the presentation layer
+                            <ul>
+                                <li style="font-size: 80%">Host's content is prejected into the hole</li>
+                            </ul>
+                        </li>
                     </ul>
                 </section>
                 <!--
@@ -610,16 +660,11 @@ shadow.appendChild(clone);
                  -->
                 <section>
                     <h2 style="text-transform: initial"> Web Components </h2>
-                    <h3 style="text-transform: initial"> Putting Them All Together</h3>
+                    <h3 style="text-transform: initial"> Putting Them Together</h3>
                     <br>
                     <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
-<name-tag> Mary </name-tag>
-<name-tag> James </name-tag>
-<name-tag> Gildong </name-tag>
-...
-
 <template id="nameTagTemplate">
-    … same as Ex-12…
+    … same as Ex-14 …
 </template>
 
 <script>
@@ -632,324 +677,34 @@ shadow.appendChild(clone);
     };
     document.registerElement('name-tag', { prototype: poroto });
 </script>
-                   </code><label style="font-weight: bold">Ex-13. A reusable component &lt;name-tag&gt; </label></pre>
+                   </code><label style="font-weight: bold">Ex-15. Defining &lt;name-tag&gt; with Custom Element, HTML Template and Shadow DOM </label></pre>
+                </section>
+                <section>
+                    <h2 style="text-transform: initial"> HTML Imports @ Web Components </h2>
+                    <h3 style="text-transform: initial"> Single Definition and Multiple Uses</h3>
+                    <br>
+                    <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+<link rel="import" href="name-tag.html">
+...
+<name-tag> Bob </name-tag>
+<name-tag> Jane </name-tag>
+<name-tag> Gildong  </name-tag>
+                    </code><label style="font-weight: bold">Ex-16. Importing the definition of &lt;name-tag&gt;</label></pre>
+                    <br>
+                    <ul>
+                       <li> Imports make separate documents
+                           <ul style="font-size:80%">
+                               <li> i.e. HTML markup in an import makes a separate DOM tree (not rendered)</li>
+                           </ul>
+                       </li>
+                       <li> But, &lt;script&gt; and &lt;style&gt; in imports are run as if they were in the main document </li>
+                    </ul>
                 </section>
                 <section>
                     <h2 style="text-transform: initial"> Thank you </h2>
                     <h3 style="text-transform: initial"> Q & A</h3>
                     <br>
                 </section>
-                 <!--
-                <section>
-                    <h1>Reveal.js</h1>
-                    <h3>HTML Presentations Made Easy</h3>
-                    <p>
-                        <small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Heads Up</h2>
-                    <p>
-                        reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-                        support for CSS 3D transforms to see it in its full glory.
-                    </p>
-
-                    <aside class="notes">
-                        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-                    </aside>
-                </section>
-
-                <section>
-                    <section>
-                        <h2>Vertical Slides</h2>
-                        <p>
-                            Slides can be nested inside of other slides,
-                            try pressing <a href="#" class="navigate-down">down</a>.
-                        </p>
-                        <a href="#" class="image navigate-down">
-                            <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-                        </a>
-                    </section>
-                    <section>
-                        <h2>Basement Level 1</h2>
-                        <p>Press down or up to navigate.</p>
-                    </section>
-                    <section>
-                        <h2>Basement Level 2</h2>
-                        <p>Cornify</p>
-                        <a class="test" href="http://cornify.com">
-                            <img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-                        </a>
-                    </section>
-                    <section>
-                        <h2>Basement Level 3</h2>
-                        <p>That's it, time to go back up.</p>
-                        <a href="#/2" class="image">
-                            <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-                        </a>
-                    </section>
-                </section>
-
-                <section>
-                    <h2>Slides</h2>
-                    <p>
-                        Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Point of View</h2>
-                    <p>
-                        Press <strong>ESC</strong> to enter the slide overview.
-                    </p>
-                    <p>
-                        Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Works in Mobile Safari</h2>
-                    <p>
-                        Try it out! You can swipe through the slides and pinch your way to the overview.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Marvelous Unordered List</h2>
-                    <ul>
-                        <li>No order here</li>
-                        <li>Or here</li>
-                        <li>Or here</li>
-                        <li>Or here</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Fantastic Ordered List</h2>
-                    <ol>
-                        <li>One is smaller than...</li>
-                        <li>Two is smaller than...</li>
-                        <li>Three!</li>
-                    </ol>
-                </section>
-
-                <section data-markdown>
-                    <script type="text/template">
-                        ## Markdown support
-
-                        For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-                        ```
-                        <section data-markdown>
-                          ## Markdown support
-
-                          For those of you who like that sort of thing.
-                          Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-                        </section>
-                        ```
-                    </script>
-                </section>
-
-                <section id="transitions">
-                    <h2>Transition Styles</h2>
-                    <p>
-                        You can select from different transitions, like: <br>
-                        <a href="?transition=cube#/transitions">Cube</a> -
-                        <a href="?transition=page#/transitions">Page</a> -
-                        <a href="?transition=concave#/transitions">Concave</a> -
-                        <a href="?transition=zoom#/transitions">Zoom</a> -
-                        <a href="?transition=linear#/transitions">Linear</a> -
-                        <a href="?transition=fade#/transitions">Fade</a> -
-                        <a href="?transition=none#/transitions">None</a> -
-                        <a href="?#/transitions">Default</a>
-                    </p>
-                </section>
-
-                <section id="themes">
-                    <h2>Themes</h2>
-                    <p>
-                        Reveal.js comes with a few themes built in: <br>
-                        <a href="?#/themes">Default</a> -
-                        <a href="?theme=sky#/themes">Sky</a> -
-                        <a href="?theme=beige#/themes">Beige</a> -
-                        <a href="?theme=simple#/themes">Simple</a> -
-                        <a href="?theme=serif#/themes">Serif</a> -
-                        <a href="?theme=night#/themes">Night</a> <br>
-                        <a href="?theme=moon#/themes">Moon</a> -
-                        <a href="?theme=solarized#/themes">Solarized</a>
-                    </p>
-                    <p>
-                        <small>
-                            * Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-                        </small>
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Global State</h2>
-                    <p>
-                        Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-                        will be added as a class to the document element when the slide is open. This lets you
-                        apply broader style changes, like switching the background.
-                    </p>
-                </section>
-
-                <section data-state="customevent">
-                    <h2>Custom Events</h2>
-                    <p>
-                        Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-                    </p>
-                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-Reveal.addEventListener( 'customevent', function() {
-    console.log( '"customevent" has fired' );
-} );
-                    </code></pre>
-                </section>
-
-                <section>
-                    <section data-background="#007777">
-                        <h2>Slide Backgrounds</h2>
-                        <p>
-                            Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-                        </p>
-                        <a href="#" class="image navigate-down">
-                            <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-                        </a>
-                    </section>
-                    <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-                        <h2>Image Backgrounds</h2>
-                        <pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-                    </section>
-                    <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-                        <h2>Repeated Image Backgrounds</h2>
-                        <pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-                    </section>
-                </section>
-
-                <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-                    <h2>Background Transitions</h2>
-                    <p>
-                        Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
-                    </p>
-                </section>
-
-                <section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-                    <h2>Background Transition Override</h2>
-                    <p>
-                        You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Clever Quotes</h2>
-                    <p>
-                        These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-                        &ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-                    </p>
-                    <blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-                        &ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-                        reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-                    </blockquote>
-                </section>
-
-                <section>
-                    <h2>Pretty Code</h2>
-                    <pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-                    </code></pre>
-                    <p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-                </section>
-
-                <section>
-                    <h2>Intergalactic Interconnections</h2>
-                    <p>
-                        You can link between slides internally,
-                        <a href="#/2/3">like this</a>.
-                    </p>
-                </section>
-
-                <section>
-                    <section id="fragments">
-                        <h2>Fragmented Views</h2>
-                        <p>Hit the next arrow...</p>
-                        <p class="fragment">... to step through ...</p>
-                        <ol>
-                            <li class="fragment"><code>any type</code></li>
-                            <li class="fragment"><em>of view</em></li>
-                            <li class="fragment"><strong>fragments</strong></li>
-                        </ol>
-
-                        <aside class="notes">
-                            This slide has fragments which are also stepped through in the notes window.
-                        </aside>
-                    </section>
-                    <section>
-                        <h2>Fragment Styles</h2>
-                        <p>There's a few styles of fragments, like:</p>
-                        <p class="fragment grow">grow</p>
-                        <p class="fragment shrink">shrink</p>
-                        <p class="fragment roll-in">roll-in</p>
-                        <p class="fragment fade-out">fade-out</p>
-                        <p class="fragment highlight-red">highlight-red</p>
-                        <p class="fragment highlight-green">highlight-green</p>
-                        <p class="fragment highlight-blue">highlight-blue</p>
-                        <p class="fragment current-visible">current-visible</p>
-                        <p class="fragment highlight-current-blue">highlight-current-blue</p>
-                    </section>
-                </section>
-
-                <section>
-                    <h2>Spectacular image!</h2>
-                    <a class="image" href="http://lab.hakim.se/meny/" target="_blank">
-                        <img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
-                    </a>
-                </section>
-
-                <section>
-                    <h2>Export to PDF</h2>
-                    <p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-                    <iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-                    <script>
-                        document.getElementById('slideshare').attributeName = 'allowfullscreen';
-                    </script>
-                </section>
-
-                <section>
-                    <h2>Take a Moment</h2>
-                    <p>
-                        Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-                        during a presentation.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Stellar Links</h2>
-                    <ul>
-                        <li><a href="http://slid.es">Try the online editor</a></li>
-                        <li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
-                        <li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h1>THE END</h1>
-                    <h3>BY Hakim El Hattab / hakim.se</h3>
-                </section>
-                -->
             </div>
 
         </div>

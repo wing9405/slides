@@ -103,6 +103,7 @@ pre .doctype {
   color: #7F9F7F;
 }
 
+/*
 pre .coffeescript .javascript,
 pre .javascript .xml,
 pre .tex .formula,
@@ -112,3 +113,4 @@ pre .xml .css,
 pre .xml .cdata {
   opacity: 0.5;
 }
+ */
