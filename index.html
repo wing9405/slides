@@ -44,7 +44,7 @@
             <div class="slides">
                 <section>
                     <h2> Web Technology Hot Issues </h2>
-                    <p style="font-size: 50%"> Presented &nbsp in &nbsp S-Core &nbsp Core-Day &nbsp 2014</p>
+                    <p style="font-size: 50%"> Presented &nbsp in &nbsp Core-Day &nbsp 2014 &nbsp  @ &nbsp  S-Core &nbsp Co., &nbsp Ltd.</p>
                     <br> <br>
                     <p> 나현익 @ Web Technology Cell </p>
                 </section>
@@ -64,12 +64,9 @@
                                         <li> HTML Imports </li>
                                     </ul>
                                 </li>
-                                <!--
                                 <li> Service Workers </li>
-                                <li> WebRTC </li>
                                 <li> App Manifests </li>
                                 <li> Picture Elements & <i>srcset</i> Attribute </li>
-                                 -->
                             </ol>
                         </li>
                     </ol>
@@ -79,7 +76,7 @@
                     <h3 style="text-transform: initial"> Now - Broadening Area </h3>
                     <br>
                     <ul>
-                        <li> You already use many web-apps
+                        <li> You already use many Web-apps
                             <ul style="font-size:80%">
                                 <li> Gmail, Naver map, online malls, online banking </li>
                             </ul>
@@ -96,6 +93,13 @@
                                 <li> <a href="https://chrome.google.com/webstore/detail/angry-birds/aknpkdffaafgjchaibgeefbgmgeghloj" target="ref">Angry Birds</a></li>
                             </ul>
                         </li>
+                     </ul>
+                 </section>
+                <section>
+                    <h2 style="text-transform: initial"> Web-App Now and Future </h2>
+                    <h3 style="text-transform: initial"> Now - Broadening Area </h3>
+                    <br>
+                    <ul>
                         <li> Photo editor
                             <ul style="font-size:80%">
                                 <li> <a href="https://pixlr.com/web" target="ref">Autodesk Pixlr</a> </li>
@@ -129,7 +133,7 @@
                                 <li> Accessible from anywhere if online </li>
                                 <li> Easy sharing: single copy on the server</li>
                                 <li> Free from some technical problems (e.g. desktop crash, data backups)</li>
-                                <li> Centralized security management (e.g. no Nasca, no Escort)</li>
+                                <li> Centralized security management (e.g. no NASCA, no Escort)</li>
                             </ul>
                         </li>
                      </ul>
@@ -172,12 +176,9 @@
                                 <li> HTML Imports </li>
                             </ul>
                         </li>
-                        <!--
                         <li style="opacity: 0.5"> Service Workers </li>
-                        <li style="opacity: 0.5"> WebRTC </li>
                         <li style="opacity: 0.5"> App Manifests </li>
                         <li style="opacity: 0.5"> Picture Elements & <i>srcset</i> Attribute </li>
-                         -->
                     </ol>
                  </section>
                  <section>
@@ -189,8 +190,7 @@
                             Native support for MVC
                             <ul style="font-size:80%">
                                 <li>
-                                    Declares a callback to observe changes of an object <br>
-                                    (e.g. C.U.D. of the object's properties)
+                                    Declares a callback to observe changes of an object
                                 </li>
                             </ul>
                         </li>
@@ -205,19 +205,16 @@ Object.observe(model, function (changes) {
     });
 });
                         </code><label style="font-weight: bold">Ex-1. Observing an object with <i>Object.observe</i></label></pre>
-                        <br>
-                        <li class="fragment">
-                            Spec: ECMAScript 7
-                        </li>
-                        <li class="fragment">
-                            Support: Chrome 36+, Node harmony <br>(ref. <a href="http://caniuse.com/#search=template" target="ref">ECMAScript 7 compatibility</a>)
-                        </li>
+                        <div class="fragment">
+                            <li> Spec: ECMAScript 7 </li>
+                            <li> Supports: Chrome 36+, Node harmony </li>
+                        </div>
                     </ul>
                 </section>
+                <!--
                 <section>
                     <h2 style="text-transform: initial"> <i>Object.observe</i> </h2>
                     <h3 style="text-transform: initial"> Custom Notification </h3>
-                    <br>
                     <pre><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 var rect = new Rectangle();
 
@@ -266,6 +263,7 @@ function Rectangle() {
 }
                     </code><label style="font-weight: bold">Ex-2. Custom notification using <i>notifier.notify</i> </label></pre>
                 </section>
+        -->
                 <section>
                     <h2 style="text-transform: initial"> <i>Object.observe</i>  </h2>
                     <h3 style="text-transform: initial"> World without <i>O.o</i>  </h3>
@@ -283,7 +281,12 @@ function Rectangle() {
                                 <li> Container object (e.g. Ember.js): incompatible objects </li>
                             </ul>
                         </li>
-                        <pre class="fragment"><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                    </ul>
+                </section>
+                <section>
+                    <h2 style="text-transform: initial"> <i>Object.observe</i>  </h2>
+                    <br>
+                    <pre><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 var person= Ember.Object.create({
   firstName: "Gildong",
   lastName: "Hong",
@@ -294,19 +297,16 @@ var person= Ember.Object.create({
 
 perseon.get("fullName");       // person.fullName
 perseon.set("lastName", "Go"); // person.lastName = "Go"
-                        </code><label style="font-weight: bold">Ex-3. An object in Ember</label></pre>
-                    </ul>
+                    </code><label style="font-weight: bold">Ex-3. An object in Ember</label></pre>
                 </section>
                 <section>
                     <h2 style="text-transform: initial"> <i>Object.observe</i>  </h2>
-                    <h3 style="text-transform: initial"> World without <i>O.o</i>  </h3>
                     <br>
                     <img id="img1" src="images/dirty-checking.png" alt="dirty-checking">
                     <label style="font-size: 70%">Algorithmic behavior of dirty-checking (<a href="http://www.html5rocks.com/en/tutorials/es7/observe" target="ref">HTML5 Rocks</a>)</label>
                 </section>
                 <section>
                     <h2 style="text-transform: initial"> <i>Object.observe</i>  </h2>
-                    <h3 style="text-transform: initial"> World without <i>O.o</i>  </h3>
                     <br>
                     <img id="img2" src="images/observe.png" alt="dirty-checking"> <br>
                     <label style="font-size: 70%">Algorithmic behavior of <i>O.o</i> (<a href="http://www.html5rocks.com/en/tutorials/es7/observe" target="ref">HTML5 Rocks</a>)</label>
@@ -324,12 +324,9 @@ perseon.set("lastName", "Go"); // person.lastName = "Go"
                                 <li> HTML Imports </li>
                             </ul>
                         </li>
-                        <!--
                         <li style="opacity: 0.5"> Service Workers </li>
-                        <li style="opacity: 0.5"> WebRTC </li>
                         <li style="opacity: 0.5"> App Manifests </li>
                         <li style="opacity: 0.5"> Picture Elements & <i>srcset</i> Attribute </li>
-                         -->
                     </ol>
                  </section>
                  <section>
@@ -344,7 +341,9 @@ perseon.set("lastName", "Go"); // person.lastName = "Go"
                         </li>
                         <li> Chaotic mixture of semantics and presentation in DOM trees </li>
                     </ul>
-                    <img class="fragment" src="images/dom-tree.png" alt="dom-tree">
+                 </section>
+                 <section>
+                    <img style="width:453; height:310" src="images/dom-tree.png" alt="dom-tree">
                 </section>
                 <section>
                     <h2 style="text-transform: initial"> Web Components </h2>
@@ -357,7 +356,6 @@ perseon.set("lastName", "Go"); // person.lastName = "Go"
         <fs-node-file> ex1.html </fs-node-file>
         <fs-node-file> ex2.html </fs-node-file>
     </fs-node-dir>
-    <fs-node-dir expanded="false"> reveal.js-2.6.2 </fs-node-dir>
     <fs-node-dir expanded="true" gitstatus="repo"> slides
         <fs-node-dir expanded="false"> .git </fs-node-dir>
         <fs-node-dir expanded="false" gitstatus="unmodified"> css </fs-node-dir>
@@ -395,11 +393,12 @@ perseon.set("lastName", "Go"); // person.lastName = "Go"
                                 <li> HTML Imports<span class="fragment">: Single definition and multiple uses</span></li>
                             </ul>
                         </li>
-                        <br>
-                        <li class="fragment"> Spec: WhatWG, W3C </li>
-                        <li class="fragment"> Support: Chrome 36+, Opera 25+, Android 37+, Chrome for Android 38+
-                            (ref. <a href="http://caniuse.com/#search=web component" target="ref">Can-I-Use</a>)
-                        </li>
+                        <div class="fragment">
+                            <li> Spec: WHATWG, W3C </li>
+                            <li> Supports: Chrome 36+, Opera 25+, Android 37+, Chrome for Android 38+
+                                (ref. <a href="http://caniuse.com/#search=web component" target="ref">Can-I-Use</a>)
+                            </li>
+                        </div>
                     </ul>
                 </section>
                 <section>
@@ -436,14 +435,8 @@ document.registerElement('extended-button', {
                     <h3 style="text-transform: initial"> Lifecycle Callbacks </h3>
                     <br>
                     <ul>
-                        <li> Callbacks
-                            <ul>
-                                <li><i> createdCallback </i></li>
-                                <li><i> attachedCallback </i></li>
-                                <li><i> detachedCallback </i></li>
-                                <li><i> attributeChangedCallback(attrName, oldVal, newVal) </i></li>
-                            </ul>
-                        </li>
+                        <li><i> createdCallback, attachedCallback, detachedCallback,
+                        attributeChangedCallback(attrName, oldVal, newVal) </i></li>
                         <li> <i>createdCallback</i> is good to fill the contents of custom elements
                             <pre class="fragment"><code data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 <div>
@@ -457,9 +450,6 @@ document.registerElement('extended-button', {
   </script>
 </div>
                             </code><label style="font-weight: bold">Ex-7. Filling the content of a custom element</label></pre>
-                            <ul style="font-size:80%">
-                                <li class="fragment"> But, what if the content string is very long? String concat?</li>
-                            </ul>
                         </li>
                      </ul>
                  </section>
@@ -480,7 +470,14 @@ document.registerElement('extended-button', {
 </template>
                             </code><label style="font-weight: bold">Ex-8. HTML template</label></pre>
                         </li>
-                        <li class="fragment"> How to use a template
+                    </ul>
+                </section>
+                <section>
+                    <h2 style="text-transform: initial"> HTML Templates @ Web Components </h2>
+                    <h3 style="text-transform: initial"> Basic Concept </h3>
+                    <br>
+                    <ul>
+                        <li> How to use a template
                             <ul style="font-size:80%">
                                 <li> Clone its content (tmpl.content, a <i>DocumentFragment</i> object) <br>
                                     and add the clone to the DOM </li>
@@ -492,32 +489,30 @@ document.body.appendChild(clone);
                             </code><label style="font-weight: bold">Ex-9. Using template</label></pre>
                         </li>
                     </ul>
-                </section>
-                <section>
+                </section>                <section>
                     <h2 style="text-transform: initial"> Shadow DOM @ Web Components </h2>
                     <h3 style="text-transform: initial"> Basic Concept </h3>
                     <br>
                     <ul>
-                        <li> Provides encapsulation for web components
+                        <li> Provides encapsulation for Web components
                             <ul style="font-size:80%">
                                 <li> Presentation details are kept in Shadow DOM and hidden at use sites </li>
                                 <li> Avoids name collision: IDs, class names, styling rules, etc</li>
                             </ul>
                         </li>
-                        <li class="fragment"> A simple example
-                            <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                        <div class="fragment">
+                        <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 <button>Hello, world!</button>
 <script>
 var host = document.querySelector('button');
 var root = host.createShadowRoot();
 root.textContent = '안녕, 세상아!';
 </script>
-                            </code><label style="font-weight: bold">Ex-10. Hello world of Shadow DOM</label></pre>
-                            <ul style="font-size:80%">
-                                <li> Add a shadow root to an element using the element's <i>createShadowRoot</i> method </li>
-                                <li> Shadow host's content is ignored while rendering, and the shadow root's content is rendered instead</li>
-                            </ul>
-                        </li>
+                        </code><label style="font-weight: bold">Ex-10. Hello world of Shadow DOM</label></pre>
+                        <ul style="font-size:80%">
+                            <li> Instead of shadow host's content, shadow root's content is rendered</li>
+                        </ul>
+                        </div>
                     </ul>
                 </section>
                 <section>
@@ -533,9 +528,7 @@ root.textContent = '안녕, 세상아!';
                     <h2 style="text-transform: initial"> Shadow DOM @ Web Components </h2>
                     <h3 style="text-transform: initial"> Separating Presentation and Semantics</h3>
                     <br>
-                    <ul>
-                        <li> Original code: Mixture of presentation and semantics
-                            <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                    <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 <style>
 .outer {
     border: 2px solid brown;
@@ -567,7 +560,18 @@ root.textContent = '안녕, 세상아!';
     Bob
   </div>
 </div>
-                            </code><label style="font-weight: bold">Ex-11. Original code</label></pre>
+                    </code><label style="font-weight: bold">Ex-11. Original code - Mixture of semantics and presentation</label></pre>
+                </section>
+                <section>
+                    <h2 style="text-transform: initial"> Shadow DOM @ Web Components </h2>
+                    <h3 style="text-transform: initial"> Separating Presentation and Semantics</h3>
+                    <br>
+                    <ul>
+                        <li> Concentrate on true semantics of name tags
+                            <ol style="font-size:80%">
+                                <li> It is a name tag </li>
+                                <li> The name is 'Bob'</li>
+                            </ol>
                          </li>
                     </ul>
                 </section>
@@ -575,14 +579,7 @@ root.textContent = '안녕, 세상아!';
                     <h2 style="text-transform: initial"> Shadow DOM @ Web Components </h2>
                     <h3 style="text-transform: initial"> Separating Presentation and Semantics</h3>
                     <br>
-                    <ul>
-                        <li> Step 1: Concentrate on true semantics of name tags
-                            <ol style="font-size:80%">
-                                <li> It is a name tag </li>
-                                <li> The name is 'Bob'</li>
-                            </ol>
-                         </li>
-                         <pre class="fragment"><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                     <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 <!-- true semantics -->
 <div id="nameTag">Bob</div>
 
@@ -598,16 +595,13 @@ root.textContent = '안녕, 세상아!';
   </div>
 </div>
 </template>
-                        </code><label style="font-weight: bold">Ex-10. Step 12: Extract true semantics</label></pre>
-                    </ul>
+                    </code><label style="font-weight: bold">Ex-10. Step 1: Extract true semantics</label></pre>
                 </section>
                 <section>
                     <h2 style="text-transform: initial"> Shadow DOM @ Web Components </h2>
                     <h3 style="text-transform: initial"> Separating Presentation and Semantics</h3>
                     <br>
-                    <ul>
-                        <li> Step 2: Populate the presentation layer using Shadow DOM </li>
-                         <pre><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                     <pre><code class="javascript" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 <!-- true semantics -->
 <div id="nameTag">Bob</div>
 
@@ -622,16 +616,13 @@ var template = document.querySelector('#nameTagTemplate');
 var clone = document.importNode(template.content, true);
 shadow.appendChild(clone);
 </script>
-                        </code><label style="font-weight: bold">Ex-13. Step 2: Populate the presentation again</label></pre>
-                    </ul>
+                    </code><label style="font-weight: bold">Ex-13. Step 2: Populate the presentation layer using Shadow DOM</label></pre>
                 </section>
                 <section>
                     <h2 style="text-transform: initial"> Shadow DOM @ Web Components </h2>
                     <h3 style="text-transform: initial"> Separating Presentation and Semantics</h3>
                     <br>
-                    <ul>
-                        <li> Step 3: Remove remaining semantic contents from presentation</li>
-                        <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+                    <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
 <template id="nameTagTemplate">
 <style>
   ...
@@ -643,7 +634,8 @@ shadow.appendChild(clone);
   </div>
 </div>
 </template>
-                        </code><label style="font-weight: bold">Ex-14. Step 3: Using &lt;content&gt; to complete the separation</label></pre>
+                    </code><label style="font-weight: bold">Ex-14. Step 3: Using &lt;content&gt; to complete the separation</label></pre>
+                    <ul>
                         <li> &lt;content&gt; is a 'hole' in the presentation layer
                             <ul>
                                 <li style="font-size: 80%">Host's content is prejected into the hole</li>
@@ -651,13 +643,6 @@ shadow.appendChild(clone);
                         </li>
                     </ul>
                 </section>
-                <!--
-                <section>
-                    <h2 style="text-transform: initial"> HTML Import @ Web Components </h2>
-                    <h3 style="text-transform: initial"> Basic Concept </h3>
-                    <br>
-                </section>
-                 -->
                 <section>
                     <h2 style="text-transform: initial"> Web Components </h2>
                     <h3 style="text-transform: initial"> Putting Them Together</h3>
@@ -687,11 +672,9 @@ shadow.appendChild(clone);
 <link rel="import" href="name-tag.html">
 ...
 <name-tag> Bob </name-tag>
-<name-tag> Jane </name-tag>
-<name-tag> Gildong  </name-tag>
-                    </code><label style="font-weight: bold">Ex-16. Importing the definition of &lt;name-tag&gt;</label></pre>
+                    </code><label style="font-weight: bold">Ex-16. Importing the definition of &lt;name-tag&gt; in another file</label></pre>
                     <br>
-                    <ul>
+                    <ul class="fragment">
                        <li> Imports make separate documents
                            <ul style="font-size:80%">
                                <li> i.e. HTML markup in an import makes a separate DOM tree (not rendered)</li>
@@ -701,12 +684,154 @@ shadow.appendChild(clone);
                     </ul>
                 </section>
                 <section>
+                    <h2 style="text-transform: initial"> Technical Issues </h2>
+                    <br>
+                     <ol style="font-size: 90%">
+                        <li style="opacity: 0.5"><i> Object.observe </i></li>
+                        <li style="opacity: 0.5"> Web Components
+                            <ul style="font-size: 85%">
+                                <li> Custom Elements </li>
+                                <li> HTML Templates </li>
+                                <li> Shadow DOM </li>
+                                <li> HTML Imports </li>
+                            </ul>
+                        </li>
+                        <li> Service Workers </li>
+                        <li> App Manifests </li>
+                        <li> Picture Elements & <i>srcset</i> Attribute </li>
+                    </ol>
+                </section>
+                <section>
+                    <h2 style="text-transform: initial"> Service Workers </h2>
+                    <br>
+                    <ul>
+                       <li> Hooking HTTP Requests + Controllable Cache
+                           <ul style="font-size:80%">
+                               <li> Hooks requests with URLs that match one of predefined URL prefixes </li>
+                               <li> Acts as a client side proxy, especially for offline usage </li>
+                           </ul>
+                       </li>
+                       <li> Background processing while browser UI doesn't run
+                           <ul style="font-size:80%">
+                               <li> e.g. handling server push messages and system alarms</li>
+                               <li> But, looks far from completion for this purpose</li>
+                           </ul>
+                       </li>
+                       <li> Spec: W3C</li>
+                       <li> No browsers support yet. To be shipped on Chrome 40 in early 2015</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 style="text-transform: initial"> App Manifests</h2>
+                    <br>
+                    <ul>
+                        <li> JSON file providing information about a Web-app
+                            <ul style="font-size:80%">
+                               <li> Name, author, icon, description, etc: To create a desktop icon</li>
+                               <li> Start URL, display, orientation, etc: To indicate how to launch</li>
+                               <li>  The list of <a href="https://wiki.mozilla.org/WebAPI#APIs" target="ref">WebAPIs</a> the app uses
+                                   for browsers incorporating <a href="https://developer.mozilla.org/en-US/Apps/Build/Architecture#Web_runtime" target="ref">Web runtime</a></li>
+                            </ul>
+                        </li>
+                        <li> For more familiar UX and native-like Web-apps
+                            <ul style="font-size:80%">
+                               <li> Launching by double-clicking icons, not by bookmarks</li>
+                               <li> Accessing security-critical local resources:
+                                   files, telephony, contacts, camera, power management, WiFi, Bluetooth, etc </li>
+                            </ul>
+                        </li>
+                       <li> Spec: W3C</li>
+                       <li> Supports: Chrome 38+</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 style="text-transform: initial"> App Manifests</h2>
+                    <br>
+                    <pre><code class="json" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+{
+  "name": "My App",
+  "description": "My elevator pitch goes here",
+  "launch_path": "/index.html",
+  "icons": {
+    "512": "/img/icon-512.png",
+    "128": "/img/icon-128.png"
+  },
+  "developer": {
+    "name": "My Name",
+    "url": "http://my-homepage.org"
+  },
+  "default_locale": "en"
+}
+                    </code><label style="font-weight: bold">Ex-17. manifest.json (an example)</label></pre>
+                    <pre><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+... <link rel="manifest" href="manifest.json"> ...
+                    </code><label style="font-weight: bold">Ex-18. index.html</label></pre>
+                </section>
+                <section>
+                    <h2 style="text-transform: initial"> Picture Elements & <i>srcset</i> Attribute</h2>
+                    <h3 style="text-transform: initial"> Browser Support for Responsive Images</h3>
+                    <br>
+                    <p>
+                        <a href="http://googlechrome.github.io/samples/picture-element/" target="ref">An example</a>
+                    </p>
+                    <br>
+                    <pre class="fragment"><code class="html" data-trim contenteditable style="font-size: 20px; margin-top: 20px;">
+<picture>
+  <source
+    media="(min-width: 650px)"
+    srcset="images/kitten-stretching.png">
+  <source
+    media="(min-width: 465px)"
+    srcset="images/kitten-sitting.png">
+  <img
+    src="images/kitten-curled.png"
+    alt="a cute kitten">
+</picture>
+                    </code><label style="font-weight: bold">Ex-19. &lt;picture&gt; element in the above example</label></pre>
+                </section>
+                <section>
+                    <h2 style="text-transform: initial"> Picture Elements & <i>srcset</i> Attribute</h2>
+                    <h3 style="text-transform: initial"> Browser Support for Responsive Images</h3>
+                    <br>
+                    <ul>
+                       <li> Selects an image out of candidates based on ...
+                           <ul style="font-size:80%">
+                               <li> Dimension </li>
+                               <li> Device pixel ratio</li>
+                               <li> Viewport proportion</li>
+                               <li> Image format</li>
+                           </ul>
+                       </li>
+                       <li> Improves image loading performance
+                           <ul style="font-size:80%">
+                               <li> Fetches only a matching or fall-back image </li>
+                           </ul>
+                       </li>
+                       <li> Spec: WHATWG</li>
+                       <li> Supports: Chrome 38+, Opera 25+, Chrome for Android 38+</li>
+                    </ul>
+                </section>
+                <section>
                     <h2 style="text-transform: initial"> Thank you </h2>
                     <h3 style="text-transform: initial"> Q & A</h3>
                     <br>
                 </section>
+                <!--
+                <section>
+                    <h2 style="text-transform: initial"> </h2>
+                    <h3 style="text-transform: initial"> </h3>
+                    <br>
+                    <ul>
+                       <li>
+                           <ul style="font-size:80%">
+                               <li> </li>
+                           </ul>
+                       </li>
+                       <li> </li>
+                    </ul>
+                </section>
+                -->
             </div>
-
         </div>
 
         <script src="lib/js/head.min.js"></script>
