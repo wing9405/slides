@@ -44,7 +44,7 @@
             <div class="slides">
                 <section>
                     <h2> Web Technology Hot Issues </h2>
-                    <p style="font-size: 50%"> (To be) Presented &nbsp in &nbsp TechX &nbsp 2015/03/04 &nbsp  @ &nbsp  Samsung &nbsp SDS </p>
+                    <p style="font-size: 50%"> <!--Presented &nbsp in &nbsp -->TechX &nbsp 2015/03/04 &nbsp  @ &nbsp  Samsung &nbsp SDS </p>
                     <br> <br>
                     <p> 나현익 (L4) </p>
                     <p> SDK 개발그룹, &nbsp S-Core</p>
@@ -157,7 +157,7 @@
                         <h3 style="text-transform: initial"> Future - Hurdles</h3>
                         <br>
                         <ul>
-                            <li> Cons (people say) of Web-apps
+                            <li> Cons of Web-apps
                                 <ul style="font-size:80%">
                                     <li> Unavailable when offline </li>
                                     <li> Poor access to local resources (files, printers, scanners, etc)</li>
@@ -200,10 +200,10 @@
                     <br>
                     <ul>
                         <li>
-                            Native support for MVC
+                            Declares a callback to observe changes of an object
                             <ul style="font-size:80%">
                                 <li>
-                                    Declares a callback to observe changes of an object
+                                    Native support for MVC
                                 </li>
                             </ul>
                         </li>
@@ -219,6 +219,8 @@ Object.observe(model, function (changes) {
 });
                         </code><label style="font-weight: bold">Ex-1. Observing an object with <i>Object.observe</i></label></pre>
                         <div class="fragment">
+                            <li> Synthetic notification and observing arrays </li>
+                            <br>
                             <li> Spec: ECMAScript 7 </li>
                             <li> Supports: Chrome 36+, Node harmony </li>
                         </div>
@@ -290,8 +292,8 @@ function Rectangle() {
                         </li>
                         <li> Mostly, they are based on 
                             <ul style="font-size:80%">
-                                <li> Container object (<i>e.g.</i> Ember.js): incompatible objects </li>
-                                <li> Dirty-checking (<i>e.g.</i> AngularJS): bad algorithmic behavior, or </li>
+                                <li> Container object (<i>e.g.</i> Ember.js): incompatible objects, or  </li>
+                                <li> Dirty-checking (<i>e.g.</i> AngularJS): bad algorithmic behavior</li>
                             </ul>
                         </li>
                     </ul>
@@ -534,7 +536,7 @@ root.textContent = '안녕, 세상아!';
                     <h3 style="text-transform: initial"> Separating Presentation and Contents</h3>
                     <br>
                     <ul>
-                        <li> To-do: Creating a name tag </li>
+                        <li> Task: Creating a name tag </li>
                     </ul> <br>
                     <img src="images/name-tag.png">
                 </section>
@@ -736,7 +738,12 @@ shadow.appendChild(clone);
                            </ul>
                        </li>
                        <li> Spec: W3C</li>
-                       <li> No browsers support yet. <a href="http://caniuse.com/#search=Service%20Workers" target="ref"> Partial support in Chrome 40 </a></li>
+                       <li> No browsers support yet 
+                           <ul style="font-size:80%">
+                               <li> <a href="http://caniuse.com/#search=Service%20Workers" target="ref"> Partial support in Chrome 40 </a> </li>
+                               <li> <a href="https://jakearchibald.github.io/isserviceworkerready/" target="ref"> But, almost there ...</a> </li>
+                           </ul>
+                        </li>
                     </ul>
                 </section>
                 <section>
@@ -830,13 +837,13 @@ shadow.appendChild(clone);
                     </ul>
                 </section>
                 <section>
-                    <h2 style="text-transform: initial"> And Much More </h2>
+                    <h2 style="text-transform: initial"> And Much More  </h2>
                     <br>
                     <ul>
                        <li> WebRTC </li>
                        <li> WebGL </li>
-                       <li> Push API </li>
                        <li> Polymer </li>
+                       <li> Push API </li>
                        <li> ... </li>
                     </ul>
                 </section>
